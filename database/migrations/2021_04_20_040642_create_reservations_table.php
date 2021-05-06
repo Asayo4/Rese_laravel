@@ -17,11 +17,10 @@ class CreateReservationsTable extends Migration
             $table->id();
             $table->date('date');
             $table->time('time');
-            $table->bigInteger('user_id', 20);
-            $table->bigInteger('shop_id', 20);
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('shop_id');
             $table->integer('num_of_users');
-            $table->timestamps('created_at');
-            $table->timestamps('updated_at');
+            $table->timestamps();
         });
     }
 

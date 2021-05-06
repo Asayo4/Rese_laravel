@@ -1,17 +1,14 @@
 <?php
 
-use App\Http\Controllers\LoginController as ControllersLoginController;
-use App\Models\Reservation;
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Controllers\ResesController;
-use Illuminate\Http\Controllers\RegisterController;
-use Illuminate\Http\Controllers\LoginController;
-use Illuminate\Http\Controllers\LogoutController;
-use Illuminate\Http\Controllers\UsersController;
-use Illuminate\Http\Controllers\ShopsController;
-use Illuminate\Http\Controllers\LikesController;
-use Illuminate\Http\Controllers\ReservationsController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ShopsController;
+use App\Http\Controllers\LikesController;
+use App\Http\Controllers\ReservationsController;
 
 
 
@@ -26,16 +23,15 @@ use Illuminate\Http\Controllers\ReservationsController;
 |
 */
 
-Route::apiResource('/rese', ResesController::class);
 Route::post('/register',[RegisterController::class, 'post']);
 Route::post('/login',[LoginController::class, 'post']);
 Route::post('/logout', [LogoutController::class, 'post']);
-Route::get('/users', [UsersController::class, 'get']);
-Route::get('/shops', [ShopsController::class, 'get']);
-Route::get('/shops/:id', [ShopsController::class, 'get']);
+Route::get('/users/{id}', [UsersController::class, 'get']);
+Route::get('/shops', [ShopsController::class, 'getAll']);
+Route::get('/shops/{id}', [ShopsController::class, 'get']);
 Route::post('/likes', [LikesController::class, 'post']);
-Route::delete('/likes/:id', [LikesController::class, 'delete']);
+Route::delete('/likes/{id}', [LikesController::class, 'delete']);
 Route::get('/likes', [LikesController::class, 'get']);
-Route::post('/reservations', [ReservationsController::class, 'post']);
-Route::delete('/resrvations/:id', [ReservationsController::class, 'delete']);
+Route::post('/reservations', [ReservationsController::class, 'post']); 
+Route::delete('/resrvations/{id}', [ReservationsController::class, 'delete']); 
 Route::get('/reservations', [ReservationsController::class, 'get']);

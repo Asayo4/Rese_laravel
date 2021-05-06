@@ -17,7 +17,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
+        //'name'を'user_name'に変更、整合性をとるため
+        'user_name',
         'email',
         'password',
     ];

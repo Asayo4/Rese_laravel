@@ -2,21 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
     public function get(Request $request)
     {
-        if ($request->has('email')) {
-            $items = DB::table('users')->where('email', $request->email)->get();
-            return response()->json([
-                'message' => 'User get successfully',
-                'data' => $items
-            ], 200);
-        } else {
-            return response()->json(['status' => 'notfound'], 404);
-        }
+        $item = User::find($request->id);
+        return response()->json([
+            'message' => 'User got successfully',
+            'data' => $item
+        ], 200);
     }
 }

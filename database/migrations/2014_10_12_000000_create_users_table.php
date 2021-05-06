@@ -17,9 +17,9 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('user_name', 100);
             $table->string('email', 50)->unique();
-            $table->string('password', 30);
-            $table->timestamps('created_at');
-            $table->timestamps('updated_at');
+            //以下('password', 30)をLaravelのデフォルトである255に変更<-hashed_passwordの桁数が30では足りないため
+            $table->string('password', 255);
+            $table->timestamps();
         });
     }
 
