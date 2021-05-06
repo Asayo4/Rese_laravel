@@ -26,4 +26,8 @@ class Shop extends Model
     {
         return $this->hasMany(Like::class);
     }
+    public function reservation()
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }

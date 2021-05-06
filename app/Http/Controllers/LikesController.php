@@ -30,7 +30,7 @@ class LikesController extends Controller
     {
         $likes = Like::where('user_id', $request->user_id)->get();
         return response()->json([
-            'message' => 'Like got successfully',
+            'message' => 'Likes got successfully',
             'data' => $likes
         ], 200);
     }

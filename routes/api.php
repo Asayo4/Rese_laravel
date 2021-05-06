@@ -33,5 +33,5 @@ Route::post('/likes', [LikesController::class, 'post']);
 Route::delete('/likes/{id}', [LikesController::class, 'delete']);
 Route::get('/likes', [LikesController::class, 'get']);
 Route::post('/reservations', [ReservationsController::class, 'post']); 
-Route::delete('/resrvations/{id}', [ReservationsController::class, 'delete']); 
+Route::delete('/reservations/{id}', [ReservationsController::class, 'delete']); 
 Route::get('/reservations', [ReservationsController::class, 'get']);
