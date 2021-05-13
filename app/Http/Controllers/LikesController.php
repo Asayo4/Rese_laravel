@@ -9,11 +9,7 @@ class LikesController extends Controller
 {
     public function post(Request $request)
     {
-        $param = [
-            "user_id" => $request->user_id,
-            "shop_id" => $request->shop_id,
-        ];
-        Like::create($param);
+        $param = Like::likePost($request);
         return response()->json([
             'message' => 'Like created successfully',
             'data' => $param

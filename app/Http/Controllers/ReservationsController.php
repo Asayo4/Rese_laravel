@@ -9,14 +9,7 @@ class ReservationsController extends Controller
 {
     public function post(Request $request)
     {
-        $param = [
-            "date" => $request->date,
-            "time" => $request->time,
-            "num_of_users" => $request->num_of_users,
-            "user_id" => $request->user_id,
-            "shop_id" => $request->shop_id,
-        ];
-        Reservation::create($param);
+        $param = Reservation::reservationPost($request);
         return response()->json([
             'message' => 'Reservation created successfully',
             'data' => $param

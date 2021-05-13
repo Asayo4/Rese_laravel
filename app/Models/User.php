@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
+
 
 class User extends Authenticatable
 {
@@ -45,5 +47,16 @@ class User extends Authenticatable
     public function reservations()
     {
         return $this->hasMany(Reservation::class);
+    }
+    public static function register($request)
+    {
+        $hashed_password = Hash::make($request->password);
+        $param = [
+            "user_name" => $request->user_name,
+            "email" => $request->email,
+            "password" => $hashed_password,
+        ];
+        $user = User::create($param);
+        return $user;
     }
 }
