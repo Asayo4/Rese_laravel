@@ -9,7 +9,7 @@ class UsersController extends Controller
 {
     public function get(Request $request)
     {
-        $item = User::find($request->id);
+        $item = User::where('id',$request->id)->with('reservations','likes')->first();
         return response()->json([
             'message' => 'User got successfully',
             'data' => $item

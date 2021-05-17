@@ -14,6 +14,10 @@ class Like extends Model
     {
         return $this->belongsTo(Shop::class);
     }
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
     public static function likePost($request)
     {
         $param = [
