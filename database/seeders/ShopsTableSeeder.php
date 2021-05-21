@@ -56,7 +56,7 @@ class ShopsTableSeeder extends Seeder
             'area_id' => 24,
             'genre_id' => 44,
             'detail' => 'ラーメン屋とは思えない店内にはカウンター席はもちろん、個室も用意してあります。ラーメンはこってり系・あっさり系ともに揃っています。その他豊富な一品料理やアルコールも用意しており、居酒屋としても利用できます。ぜひご来店をお待ちしております。',
-            'path' => 'yakiniku.jpg'
+            'path' => 'ramen.jpg'
         ];
         Shop::insert($param);
 
