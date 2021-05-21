@@ -73,7 +73,7 @@ class ShopsTableSeeder extends Seeder
             'shop_name' => 'JJ',
             'area_id' => 14,
             'genre_id' => 24,
-            'detail' => 'イタリア製ピザ窯芳ばしく焼き上げた極薄のミラノピッツァや厳選されたワインをお楽しみいただけます。女子会や男子会、記念日やお誕生日会にもオススメです。', 'path' => 'itarian.jpg'
+            'detail' => 'イタリア製ピザ窯芳ばしく焼き上げた極薄のミラノピッツァや厳選されたワインをお楽しみいただけます。女子会や男子会、記念日やお誕生日会にもオススメです。', 'path' => 'italian.jpg'
         ];
         Shop::insert($param);
 
