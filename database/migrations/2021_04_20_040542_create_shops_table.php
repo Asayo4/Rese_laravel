@@ -18,6 +18,7 @@ class CreateShopsTable extends Migration
             $table->string('shop_name', 50);
             $table->unsignedBigInteger('area_id');
             $table->unsignedBigInteger('genre_id');
+            $table->string('path');
             $table->string('detail', 255);
             $table->timestamps();
         });
