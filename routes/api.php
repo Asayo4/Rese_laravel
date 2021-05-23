@@ -30,7 +30,7 @@ Route::get('/users/{id}', [UsersController::class, 'get']);
 Route::get('/shops', [ShopsController::class, 'getAll']);
 Route::get('/shops/{id}', [ShopsController::class, 'get']);
 Route::post('/likes', [LikesController::class, 'post']);
-Route::delete('/likes', [LikesController::class, 'delete']);
+Route::delete('/likes/{id}', [LikesController::class, 'delete']);
 Route::get('/likes', [LikesController::class, 'get']);
 Route::post('/reservations', [ReservationsController::class, 'post']); 
 Route::delete('/reservations/{id}', [ReservationsController::class, 'delete']); 
