@@ -24,7 +24,7 @@ class LikesController extends Controller
     }
     public function get(Request $request)
     {
-        $likes = Like::where('user_id', $request->user_id)->join('shops')->get();
+        $likes = Like::where('user_id', $request->user_id)->get();
         return response()->json([
             'message' => 'Likes got successfully',
             'data' => $likes
