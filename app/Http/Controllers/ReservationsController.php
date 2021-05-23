@@ -25,9 +25,11 @@ class ReservationsController extends Controller
     public function get(Request $request)
     {
         $items = Reservation::where('user_id', $request->user_id)->get();
+
         return response()->json([
             'message' => 'Reservations got successfully',
-            'data' => $items,$items->shops->shop_name
+            'data' => $items,
         ], 200);
+        $items->shop->shop_name;
     }
 }
