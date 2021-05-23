@@ -19,7 +19,7 @@ class Reservation extends Model
     }
     public function shop()
     {
-        return $this->belongsTo(Shop::class)->withDefault();
+        return $this->belongsTo(Shop::class);
     }
     public static function reservationPost($request)
     {
