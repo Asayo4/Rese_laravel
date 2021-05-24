@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reservation;
+use App\Models\Shop;
 use Illuminate\Http\Request;
 
 class ReservationsController extends Controller
@@ -24,12 +25,24 @@ class ReservationsController extends Controller
     }
     public function get(Request $request)
     {
+        
+        //↓元の文
         $items = Reservation::where('user_id', $request->user_id)->get();
+        //↑元の文
+
+        
+        $data = [];
+        foreach($items as $item) {
+            $data[] = [
+                'item' => $item,
+                'shop_name' => $item->shop
+            ];
+        }
 
         return response()->json([
             'message' => 'Reservations got successfully',
-            'data' => $items,
+            'data' => $data
         ], 200);
-        $items->shop->shop_name;
+        
     }
 }
