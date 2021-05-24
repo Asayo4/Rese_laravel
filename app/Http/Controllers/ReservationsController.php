@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reservation;
-use App\Models\Shop;
 use Illuminate\Http\Request;
 
 class ReservationsController extends Controller
@@ -34,6 +33,7 @@ class ReservationsController extends Controller
         $data = [];
         foreach($items as $item) {
             $data[] = [
+                'id' => $item->shop->id,
                 'item' => $item,
                 'shop_name' => $item->shop
             ];
