@@ -33,9 +33,8 @@ class ReservationsController extends Controller
         $data = [];
         foreach($items as $item) {
             $data[] = [
-                'id' => $item->shop->id,
                 'item' => $item,
-                'shop_name' => $item->shop
+                'shop' => $item->shop
             ];
         }
 
