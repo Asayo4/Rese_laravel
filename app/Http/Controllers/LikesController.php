@@ -30,7 +30,7 @@ class LikesController extends Controller
         foreach ($likes as $like) {
             $data[] = [
                 'shop' => $like->shop->with('area','genre')->where('id', $like->shop_id)->get(),
-                'item' => $like,
+                //'item' => $like,
             ];
         }
 
