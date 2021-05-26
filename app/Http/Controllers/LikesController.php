@@ -29,8 +29,8 @@ class LikesController extends Controller
         $data = [];
         foreach ($likes as $like) {
             $data[] = [
-                'item' => $like->shop->with('area:id,area_name','genre:id,genre_name')->where('id', $like->shop_id)->get(),
-                //'item' => $like,
+                'shops' => $like->shop->with('area:id,area_name','genre:id,genre_name')->where('id', $like->shop_id)->get(),
+                'item' => $like,
             ];
         }
 
