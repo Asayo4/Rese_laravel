@@ -11,7 +11,8 @@ class Shop extends Model
         'area_name',
         'genre_name',
         'detail',
-        'likes'
+        'likes',
+        'url'
     ];
 
     public function genre()
