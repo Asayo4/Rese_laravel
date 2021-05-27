@@ -72,7 +72,7 @@ class ShopsTableSeeder extends Seeder
         $param = [
             'shop_name' => 'JJ',
             'area_id' => 14,
-            'genre_id' => 24,
+            'genre_id' => 34,
             'detail' => 'イタリア製ピザ窯芳ばしく焼き上げた極薄のミラノピッツァや厳選されたワインをお楽しみいただけます。女子会や男子会、記念日やお誕生日会にもオススメです。',
             'url' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/italian.jpg'
         ];
