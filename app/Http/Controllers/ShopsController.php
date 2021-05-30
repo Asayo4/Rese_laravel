@@ -18,18 +18,11 @@ class ShopsController extends Controller
     }
     public function getAll()
     {
-        $shops = Shop::with('area:id,area_name', 'genre:id,genre_name')->get();
-        $data = [];
-        foreach($shops as $shop) {
-            $data[] = [
-                'shops' => $shop,
-                'likes' => $shop->with('likes')->get()
-            ];
-        }
+        $shops = Shop::with('area:id,area_name', 'genre:id,genre_name', 'likes:id,shop_id,user_id')->get();
 
         return response()->json([
             'message' => 'Shops got successfully',
-            'data' => $data
+            'data' => $shops
         ], 200);
     }
 }
