@@ -23,7 +23,7 @@ class ShopsController extends Controller
         foreach($shops as $shop) {
             $data[] = [
                 'shops' => $shop,
-                'likes' => $shop->with('likes')
+                'likes' => $shop->with('likes')->get()
             ];
         }
 
