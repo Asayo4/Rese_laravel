@@ -11,7 +11,7 @@ class Shop extends Model
         'area_name',
         'genre_name',
         'detail',
-        'user_id',
+        //'user_id',
         'url'
     ];
 
