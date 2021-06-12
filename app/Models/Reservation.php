@@ -33,4 +33,14 @@ class Reservation extends Model
         $reservationPost = Reservation::create($param);
         return $reservationPost;
     }
+    public static function reservationPut($request)
+    {
+        $param = [
+            "date" => $request->date,
+            "time" => $request->time,
+            "num_of_users" => $request->num_of_users
+        ];
+        $reservationPut = Reservation::where('id', $request->id)->where('user_id', $request->user_id)->update($param);
+        return $reservationPut;
+    }
 }

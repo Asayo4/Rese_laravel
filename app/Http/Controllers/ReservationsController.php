@@ -22,13 +22,20 @@ class ReservationsController extends Controller
             'message' => 'Reservation deleted successfully'
         ], 200);
     }
+    public function put(Request $request)
+    {
+        $param = Reservation::reservationPut($request);
+        return response()->json([
+            'message' => 'Reservation updated successfully',
+            'data' => $param
+        ], 200);
+    }
     public function get(Request $request)
     {
         
         //↓元の文
         $items = Reservation::where('user_id', $request->user_id)->get();
         //↑元の文
-
         
         $data = [];
         foreach($items as $item) {
