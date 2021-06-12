@@ -52,6 +52,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Like::class);
     }
+    public function reviews()
+    {
+        return $this->hasMany(Reviews::class);
+    }
     public static function register($request)
     {
         $hashed_password = Hash::make($request->password);

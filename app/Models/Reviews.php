@@ -11,6 +11,10 @@ class Reviews extends Model
     {
         return $this->belongsTo(Shop::class);
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     public static function reviewPost($request)
     {
         $param = [
