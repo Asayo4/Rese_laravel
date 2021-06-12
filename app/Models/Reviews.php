@@ -2,11 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Reviews extends Model
 {
+    protected $fillable = [
+        'shop_id',
+        'user_id',
+        'user_name',
+        'review_content',
+        'num_of_stars'
+    ];
     public function shops()
     {
         return $this->belongsTo(Shop::class);
