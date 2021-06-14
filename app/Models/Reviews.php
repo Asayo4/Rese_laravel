@@ -13,7 +13,7 @@ class Reviews extends Model
         'review_content',
         'num_of_stars'
     ];
-    public $incrementing = false;
+    protected $table = 'reviews';
     public function shops()
     {
         return $this->belongsTo(Shop::class);
@@ -27,7 +27,7 @@ class Reviews extends Model
         $param = [
             'shop_id' => $request->shop_id,
             'user_id' => $request->user_id,
-            'review_content' => $request->reviwe_content,
+            'review_content' => $request->review_content,
             'num_of_stars' => $request->num_of_stars
         ];
         $reviewPost = Reviews::create($param);
