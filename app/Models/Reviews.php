@@ -11,7 +11,8 @@ class Reviews extends Model
         'user_id',
         'user_name',
         'review_content',
-        'num_of_stars'
+        'num_of_stars',
+        'nickname'
     ];
     protected $table = 'reviews';
     public function shops()
@@ -28,7 +29,8 @@ class Reviews extends Model
             'shop_id' => $request->shop_id,
             'user_id' => $request->user_id,
             'review_content' => $request->review_content,
-            'num_of_stars' => $request->num_of_stars
+            'num_of_stars' => $request->num_of_stars,
+            'nickname' => $request->nickname
         ];
         $reviewPost = Reviews::create($param);
         return $reviewPost;
