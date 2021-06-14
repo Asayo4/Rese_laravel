@@ -9,8 +9,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ShopsController;
 use App\Http\Controllers\LikesController;
 use App\Http\Controllers\ReservationsController;
-
-
+use App\Http\Controllers\ReviewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +35,7 @@ Route::post('/reservations', [ReservationsController::class, 'post']);
 Route::delete('/reservations/{id}', [ReservationsController::class, 'delete']);
 Route::put('/reservations/{id}', [ReservationsController::class, 'put']); 
 Route::get('/reservations', [ReservationsController::class, 'get']);
+Route::post('/reviews', [ReviewsController::class, 'post']);
+Route::delete('/reviews/{id}', [ReviewsController::class, 'delete']);
+Route::put('/reviews/{id}', [ReviewsController::class, 'put']);
+Route::get('/reviews', [ReviewsController::class, 'get']);
