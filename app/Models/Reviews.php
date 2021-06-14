@@ -13,6 +13,7 @@ class Reviews extends Model
         'review_content',
         'num_of_stars'
     ];
+    public $incrementing = false;
     public function shops()
     {
         return $this->belongsTo(Shop::class);
