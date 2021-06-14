@@ -18,7 +18,7 @@ class ShopsController extends Controller
     }
     public function getAll()
     {
-        $shops = Shop::with('area:id,area_name', 'genre:id,genre_name', 'likes:id,shop_id,user_id')->get();
+        $shops = Shop::with('area:id,area_name', 'genre:id,genre_name', 'likes:id,shop_id,user_id', 'reviews:id,num_of_stars')->get();
 
         return response()->json([
             'message' => 'Shops got successfully',
