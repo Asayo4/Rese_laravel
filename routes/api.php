@@ -38,4 +38,5 @@ Route::get('/reservations', [ReservationsController::class, 'get']);
 Route::post('/reviews', [ReviewsController::class, 'post']);
 Route::delete('/reviews/{id}', [ReviewsController::class, 'delete']);
 Route::put('/reviews/{id}', [ReviewsController::class, 'put']);
-Route::get('/reviews', [ReviewsController::class, 'get']);
+Route::get('/reviews/{id}', [ReviewsController::class, 'shopGet']);
+Route::get('/reviews', [ReviewsController::class, 'userGet']);
