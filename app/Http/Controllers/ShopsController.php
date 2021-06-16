@@ -9,7 +9,7 @@ class ShopsController extends Controller
 {
     public function get(Request $request)
     {
-        $shop = Shop::where('shops.id', $request->id)->with('area:id,area_name', 'genre:id,genre_name', 'reviews:id,shop_id,num_od_stars')->get();
+        $shop = Shop::where('shops.id', $request->id)->with('area:id,area_name', 'genre:id,genre_name', 'reviews:id,shop_id,num_of_stars')->get();
 
         return response()->json([
             'message' => 'Shop got successfully',
