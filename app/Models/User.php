@@ -63,6 +63,7 @@ class User extends Authenticatable
             "user_name" => $request->user_name,
             "email" => $request->email,
             "password" => $hashed_password,
+            'nickname' => $request->nickname
         ];
         $user = User::create($param);
         return $user;
