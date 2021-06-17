@@ -12,7 +12,6 @@ class Reviews extends Model
         'user_name',
         'review_content',
         'num_of_stars',
-        'nickname'
     ];
     protected $table = 'reviews';
     public function shops()

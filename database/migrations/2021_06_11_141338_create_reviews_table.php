@@ -15,7 +15,6 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('nickname', 30);
             $table->string('review_content', 255);
             $table->unsignedTinyInteger('num_of_stars');
             $table->unsignedBigInteger('shop_id');
