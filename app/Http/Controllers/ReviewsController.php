@@ -32,7 +32,7 @@ class ReviewsController extends Controller
     }
     public function shopGet(Request $request)
     {
-        $items = Reviews::where('shop_id', $request->shop_id)->with('user:id,user_name')->get();
+        $items = Reviews::where('shop_id', $request->shop_id)->with('user:id, nickname')->get();
 
         return response()->json([
             'message' => 'Reviews got successfully',
