@@ -12,15 +12,15 @@ class Reviews extends Model
         'user_name',
         'review_content',
         'num_of_stars',
+        'nickname'
     ];
-    protected $table = 'reviews';
-    public function shops()
-    {
-        return $this->belongsTo(Shop::class);
-    }
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function shop()
+    {
+        return $this->belongsTo(Shop::class, 'shop_id');
     }
     public static function reviewPost($request)
     {
