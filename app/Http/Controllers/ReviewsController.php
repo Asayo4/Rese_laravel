@@ -43,9 +43,17 @@ class ReviewsController extends Controller
     {
         $items = Reviews::where('user_id', $request->user_id)->get();
 
+        $data = [];
+        foreach ($items as $item) {
+            $data[] = [
+                'item' => $item,
+                'shop' => $item->shop
+            ];
+        }
+
         return response()->json([
             'message' => 'Reviews got successfully',
-            'data' => $items
+            'data' => $data
         ], 200);
     }
 }
